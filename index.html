@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>CryptoDesk</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    :root {
+      --gold: rgba(176, 141, 87, 0.9);
+      --gold-soft: rgba(176, 141, 87, 0.25);
+    }
+
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
@@ -25,21 +30,30 @@
       text-transform: uppercase;
       color: #9a9a9a;
       margin-bottom: 28px;
-      font-weight: 600;
     }
 
     h1 {
       font-size: 64px;
       font-weight: 800;
-      letter-spacing: -1.5px;
+      letter-spacing: -1px;
       margin-bottom: 20px;
+      position: relative;
+    }
+
+    h1::after {
+      content: "";
+      display: block;
+      width: 64px;
+      height: 3px;
+      margin-top: 18px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
 
     p {
       font-size: 20px;
       line-height: 1.7;
       color: #555;
-      max-width: 600px;
+      max-width: 520px;
     }
 
     .cta {
@@ -53,67 +67,84 @@
       border-radius: 14px;
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      border: 1px solid var(--gold-soft);
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.35),
+        inset 0 0 0 1px var(--gold-soft);
       transition: all 0.3s ease;
     }
 
     .cta:hover {
-      background: rgba(0,0,0,0.9);
       transform: translateY(-2px);
+      box-shadow:
+        0 14px 40px rgba(0,0,0,0.45),
+        inset 0 0 0 1px var(--gold);
     }
-  </style>/* ---- Institutional Gold Accents ---- */
 
-:root {
-  --gold: rgba(176, 141, 87, 0.9);
-  --gold-soft: rgba(176, 141, 87, 0.25);
-}
+    section {
+      margin-top: 140px;
+    }
 
-/* Headline accent */
-h1 {
-  position: relative;
-}
+    section::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      margin-bottom: 60px;
+      background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+    }
 
-h1::after {
-  content: "";
-  display: block;
-  width: 64px;
-  height: 3px;
-  margin-top: 18px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
+    h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
 
-/* CTA gold edge + glow */
-.cta {
-  border: 1px solid var(--gold-soft);
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.35),
-    inset 0 0 0 1px var(--gold-soft);
-}
+    .lead {
+      font-size: 18px;
+      color: #666;
+      max-width: 520px;
+      margin-bottom: 60px;
+    }
 
-.cta:hover {
-  box-shadow:
-    0 14px 40px rgba(0,0,0,0.45),
-    inset 0 0 0 1px var(--gold);
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+    }
 
-/* Section divider */
-section::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  margin: 80px 0 60px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--gold-soft),
-    transparent
-  );
-}
+    .card {
+      padding: 32px;
+      background: rgba(255,255,255,0.65);
+      border-radius: 18px;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    footer {
+      margin-top: 140px;
+      padding: 40px 0;
+      font-size: 14px;
+      color: #999;
+    }
+  </style>
 </head>
 
 <body>
+
   <div class="container">
+
     <div class="tagline">Institutional Trading Desk</div>
 
     <h1>CryptoDesk</h1>
@@ -126,82 +157,37 @@ section::before {
     <a class="cta" href="https://t.me/CryptoDeskSupportoffical_bot">
       Join CryptoDesk
     </a>
+
+    <section>
+      <h2>Why CryptoDesk</h2>
+      <p class="lead">
+        We don’t trade indicators.<br>
+        Institutions don’t either.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Liquidity First</h3>
+          <p>We wait for where money actually moves. No guessing. No chasing.</p>
+        </div>
+
+        <div class="card">
+          <h3>Risk Before Reward</h3>
+          <p>Capital protection comes first. One trade never defines us.</p>
+        </div>
+
+        <div class="card">
+          <h3>Execution Over Emotion</h3>
+          <p>Process driven decisions. No impulse. No revenge trades.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © CryptoDesk
+    </footer>
+
   </div>
- <section class="why">
-  <div class="wrap">
-    <h2>Why CryptoDesk</h2>
-    <p class="lead">
-      We don’t trade indicators.<br>
-      Institutions don’t either.
-    </p>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Liquidity First</h3>
-        <p>We wait for where money actually moves. No guessing. No chasing.</p>
-      </div>
-
-      <div class="card">
-        <h3>Risk Before Reward</h3>
-        <p>Capital protection comes first. One trade never defines us.</p>
-      </div>
-
-      <div class="card">
-        <h3>Execution Over Emotion</h3>
-        <p>Process-driven entries. No FOMO. No revenge trades.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .why {
-    background: #fff;
-    padding: 100px 24px;
-  }
-
-  .wrap {
-    max-width: 1100px;
-    margin: auto;
-  }
-
-  .why h2 {
-    font-size: 40px;
-    font-weight: 800;
-    margin-bottom: 16px;
-  }
-
-  .lead {
-    font-size: 20px;
-    color: #555;
-    margin-bottom: 48px;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 24px;
-  }
-
-  .card {
-    background: rgba(255,255,255,0.7);
-    border-radius: 16px;
-    padding: 32px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-    backdrop-filter: blur(10px);
-  }
-
-  .card h3 {
-    font-size: 22px;
-    margin-bottom: 12px;
-  }
-
-  .card p {
-    font-size: 16px;
-    color: #444;
-  }
-</style>
 </body>
 </html>
-
-
