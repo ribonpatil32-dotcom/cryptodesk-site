@@ -6,138 +6,153 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-:root{
+:root {
   --gold: rgba(176,141,87,0.9);
   --gold-soft: rgba(176,141,87,0.25);
 }
 
-body{
-  margin:0;
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
   font-family: Inter, Arial, sans-serif;
-  background: radial-gradient(circle at top,#ffffff 0%,#f2f2f2 45%,#e9e9e9 100%);
-  color:#111;
+  background: radial-gradient(circle at top, #ffffff 0%, #f2f2f2 45%, #e9e9e9 100%);
+  color: #111;
 }
 
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:100px 24px;
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 100px 24px;
 }
 
-.tagline{
-  text-transform:uppercase;
-  letter-spacing:3px;
-  font-weight:600;
-  color:#9a9a9a;
-  margin-bottom:28px;
+/* HERO */
+.tagline {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 28px;
 }
 
-h1{
-  font-size:64px;
-  font-weight:800;
-  letter-spacing:-1px;
-  margin-bottom:20px;
+h1 {
+  font-size: 64px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
-h1::after{
-  content:"";
-  display:block;
-  width:72px;
-  height:3px;
-  margin-top:18px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+h1::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 3px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
-p{
-  font-size:20px;
-  line-height:1.6;
-  color:#555;
-  max-width:640px;
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 560px;
 }
 
-.cta{
-  display:inline-block;
-  margin-top:48px;
-  padding:16px 36px;
-  background:rgba(0,0,0,0.75);
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
-  border-radius:14px;
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border:1px solid var(--gold-soft);
-  box-shadow:0 20px 40px rgba(0,0,0,0.15), inset 0 0 0 1px var(--gold-soft);
-  transition:all 0.3s ease;
+.cta {
+  display: inline-block;
+  margin-top: 44px;
+  padding: 16px 38px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 14px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--gold-soft);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transition: all .3s ease;
 }
 
-.cta:hover{
-  transform:translateY(-2px);
-  box-shadow:0 26px 50px rgba(0,0,0,0.25), inset 0 0 0 1px var(--gold);
+.cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.35), inset 0 0 0 1px var(--gold);
 }
 
-section{
-  position:relative;
+/* SECTION */
+section {
+  padding: 120px 0;
 }
 
-section::before{
-  content:"";
-  display:block;
-  width:100%;
-  height:1px;
-  margin:90px 0 70px;
-  background:linear-gradient(90deg,transparent,var(--gold-soft),transparent);
+section::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-bottom: 80px;
+  background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
 }
 
-.wrap{
-  max-width:1100px;
-  margin:auto;
-  padding:0 24px;
+h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 18px;
 }
 
-h2{
-  font-size:42px;
-  margin-bottom:14px;
+.lead {
+  font-size: 18px;
+  color: #555;
+  max-width: 600px;
 }
 
-.lead{
-  font-size:20px;
-  color:#666;
-  max-width:520px;
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 60px;
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:32px;
-  margin-top:56px;
+/* CARD */
+.card {
+  padding: 36px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  border: 1px solid var(--gold-soft);
 }
 
-.card{
-  background:rgba(255,255,255,0.6);
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
-  border-radius:22px;
-  padding:36px 32px;
-  border:1px solid rgba(255,255,255,0.4);
-  box-shadow:0 30px 60px rgba(0,0,0,0.12);
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 22px;
 }
 
-.card h3{
-  font-size:22px;
-  margin-bottom:12px;
+/* LIST */
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 50px;
 }
 
-.card p{
-  font-size:17px;
-  color:#555;
+.list div {
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0,0,0,0.05);
 }
 
-footer{
-  text-align:center;
-  padding:80px 24px;
-  font-size:14px;
-  color:#888;
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 80px 24px 40px;
+  font-size: 14px;
+  color: #777;
 }
 </style>
 </head>
@@ -146,9 +161,7 @@ footer{
 
 <div class="container">
   <div class="tagline">Institutional Trading Desk</div>
-
   <h1>CryptoDesk</h1>
-
   <p>
     We don’t trade indicators.<br>
     We trade liquidity, structure, and execution.
@@ -159,36 +172,88 @@ footer{
   </a>
 </div>
 
-<section>
-  <div class="wrap">
-    <h2>Why CryptoDesk</h2>
-    <p class="lead">
-      We don’t trade indicators.<br>
-      Institutions don’t either.
-    </p>
+<section class="container">
+  <h2>Why CryptoDesk</h2>
+  <p class="lead">
+    Retail chases moves. Institutions wait for liquidity.<br>
+    We operate where money actually moves.
+  </p>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Liquidity First</h3>
-        <p>We wait for where money actually moves. No guessing. No chasing.</p>
-      </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Liquidity First</h3>
+      <p>We wait for where money actually moves. No guessing. No chasing.</p>
+    </div>
 
-      <div class="card">
-        <h3>Risk Before Reward</h3>
-        <p>Capital protection comes first. One trade never defines us.</p>
-      </div>
+    <div class="card">
+      <h3>Risk Before Reward</h3>
+      <p>Capital protection comes first. One trade never defines us.</p>
+    </div>
 
-      <div class="card">
-        <h3>Execution Over Emotion</h3>
-        <p>Process-driven decisions. No impulse. No revenge trades.</p>
-      </div>
+    <div class="card">
+      <h3>Execution Over Emotion</h3>
+      <p>Process-driven decisions. No impulse. No revenge trades.</p>
     </div>
   </div>
 </section>
 
+<section class="container">
+  <h2>Our Edge</h2>
+  <p class="lead">
+    This is not signals. This is institutional thinking.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Liquidity Mapping</h3>
+      <p>We identify where large players must transact.</p>
+    </div>
+
+    <div class="card">
+      <h3>Structure & Timing</h3>
+      <p>Execution only when conditions align.</p>
+    </div>
+
+    <div class="card">
+      <h3>Risk Framework</h3>
+      <p>Survival first. Profits follow.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Who This Is For</h2>
+
+  <div class="list">
+    <div>
+      ✔ Disciplined traders<br>
+      ✔ Capital-focused mindset<br>
+      ✔ Long-term operators
+    </div>
+
+    <div>
+      ✖ Indicator addicts<br>
+      ✖ Gamble mentality<br>
+      ✖ Emotion-driven trading
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <h2>Join CryptoDesk</h2>
+  <p class="lead">
+    Stop reacting. Start executing with structure.
+  </p>
+
+  <a class="cta" href="https://t.me/CryptoDeskSupportoffical_bot">
+    Request Access
+  </a>
+</section>
+
 <footer>
-  © CryptoDesk
+  © CryptoDesk — Liquidity • Risk • Execution
 </footer>
 
 </body>
-</html>      
+  </html>
+
